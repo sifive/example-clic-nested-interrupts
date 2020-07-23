@@ -3,7 +3,7 @@
 
 PROGRAM ?= clic-nested-interrupts
 
-#override CFLAGS += -Xlinker --defsym=__stack_size=0x800
+override CFLAGS += -Xlinker --defsym=__stack_size=0x800 -fomit-frame-pointer
 
 $(PROGRAM): $(wildcard *.c) $(wildcard *.h) $(wildcard *.S)
 
