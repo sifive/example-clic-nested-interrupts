@@ -76,10 +76,6 @@ int main (void)
     metal_led_off(led0_red);
     metal_led_off(led0_green);
  
-    sifive_clic0_set_priority(clic, RISCV_MACHINE_SOFTWARE_INTERRUPT_ID, 3);
-    sifive_clic0_set_priority(clic, SIFIVE_CLIC_SOFTWARE_INTERRUPT_ID, 2);
-    sifive_clic0_set_priority(clic, RISCV_MACHINE_TIMER_INTERRUPT_ID, 1);
-
     struct metal_cpu cpu = metal_cpu_get(metal_cpu_get_current_hartid());
     metal_cpu_set_mtimecmp(cpu, metal_cpu_get_mtime(cpu) + 5*RTC_FREQ);
 
